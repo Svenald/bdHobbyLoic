@@ -1,3 +1,4 @@
+global using global::System.Data.SqlClient;
 namespace wfa_hobby
 {
     internal static class Program

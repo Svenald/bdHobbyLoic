@@ -22,5 +22,16 @@ namespace wfa_hobby.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=bd-tinfo;Initial Catalog=l.mous_hobby;Integrated Security=True;Encryp" +
+            "t=False")]
+        public string maconnexionString {
+            get {
+                return ((string)(this["maconnexionString"]));
+            }
+        }
     }
 }
