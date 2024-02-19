@@ -8,5 +8,23 @@ namespace wfa_hobby
 {
     internal class ManagerEtudiant
     {
+        public int AjouterEtudiant(Etudiant etudiant)
+        {
+            int nombreDeLignesAffectees = 0;
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
+            return nombreDeLignesAffectees;
+        }
+
     }
 }
