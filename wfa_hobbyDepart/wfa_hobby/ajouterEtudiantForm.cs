@@ -36,7 +36,6 @@ namespace wfa_hobby
             etudiant.No_provenance = 1;
             return etudiant;
         }
-
         private void ajouterButton_Click(object sender, EventArgs e)
         {
             ManagerEtudiant managerEtudiant = new ManagerEtudiant();
@@ -48,6 +47,10 @@ namespace wfa_hobby
                 {
                     etudiant = RemplirColonneEtudiant();
                     nombreLignesAffectees = managerEtudiant.AjouterEtudiant(etudiant);
+                    if (nombreLignesAffectees > 0)
+                    {
+                        MessageBox.Show("Ajout réussi");
+                    }
                 }
             }
             catch (Exception ex)
