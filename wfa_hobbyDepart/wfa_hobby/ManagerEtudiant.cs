@@ -22,8 +22,15 @@ namespace wfa_hobby
                         //commandtype
                         maCommande.CommandType = CommandType.StoredProcedure;
                         //définir les paramètres et les ajouter à la commande
-                        //ouvrir la connexion
+                        maCommande.Parameters.Add(new SqlParameter("@prenom", (etudiant.Prenom==""?DBNull.Value:etudiant.Prenom)));
+                        maCommande.Parameters.Add(new SqlParameter("@nom", (etudiant.Nom==""?DBNull.Value:etudiant.Nom)));
+                        maCommande.Parameters.Add(new SqlParameter("@cellulaire", (etudiant.Cellulaire == "" ? DBNull.Value : etudiant.Cellulaire)));
+                        maCommande.Parameters.Add(new SqlParameter("@humour", (etudiant.Humour == 0 ? DBNull.Value : etudiant.Humour)));
+                        maCommande.Parameters.Add(new SqlParameter("@no_provenance", (etudiant.No_provenance == 0 ? DBNull.Value : etudiant.No_provenance)));
+                        //ouvrir la connexion par la commande
+                        maCommande.Connection.Open();
                         //exécuter la commande
+                        nombreDeLignesAffectees = maCommande.ExecuteNonQuery();
                     }
                 }
             }
