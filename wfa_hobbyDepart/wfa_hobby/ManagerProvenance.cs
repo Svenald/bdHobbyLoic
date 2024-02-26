@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace wfa_hobby
 {
-    internal class ManagerProvenance
+    internal class ManagerProvenance :Manager
     {
         public List<Provenance> ListerProvenance()
         {
             var maListeProvenance = new List<Provenance>();
             try
             {
-                using (var maConnexion = new SqlConnection(Properties.Settings.Default.maconnexionString))
+                using (var maConnexion = GetConnection())
                 {
                     using (var maCommande = new SqlCommand("ListerProvenance", maConnexion))
                     {

@@ -20,6 +20,7 @@ namespace wfa_hobby
        
         private void ajouterEtudiantForm_Load(object sender, EventArgs e)
         {
+            humourNumericUpDown.Value = 1;
             ManagerProvenance managerProvenance = new ManagerProvenance();
             try
             {

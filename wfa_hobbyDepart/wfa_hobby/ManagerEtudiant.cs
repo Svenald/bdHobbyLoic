@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace wfa_hobby
 {
-    internal class ManagerEtudiant
+    internal class ManagerEtudiant :Manager
     {
         public int AjouterEtudiant(Etudiant etudiant)
         {
             int nombreDeLignesAffectees = 0;
             try
             {
-                using (var myConnection = new SqlConnection(Properties.Settings.Default.maconnexionString)) //Creation d'une variable pour stocker la connexion
+                using (var myConnection = GetConnection()) //Creation d'une variable pour stocker la connexion
                 {
                     using (var maCommande = new SqlCommand("ajouterEtudiant",myConnection)) //utilisation de la variable de connexion
                     {
