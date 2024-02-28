@@ -16,7 +16,6 @@ namespace wfa_hobby
             {
                 using (var myConnection = GetConnection())
                 {
-
                     using (var myCommand = CreateCommand("ListerProvenance", null))
                     {
                         // executer ma commande
@@ -30,20 +29,15 @@ namespace wfa_hobby
                                 maProvenance.ProvenanceDescription = (string)monDataReader["provenance"]/*.ToString()*/;
                                 maListeProvenance.Add(maProvenance);
                             }
-                            
-
                         }
                     }
                 }
-
             }
             catch (Exception)
             {
-
                 throw;
             }
             return maListeProvenance;
-
         }
     }
 }
