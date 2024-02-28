@@ -11,22 +11,17 @@ namespace wfa_hobby
     {
         public List<Provenance> ListerProvenance()
         {
-            var maListeProvenance = new List<Provenance>();
+            List<Provenance> maListeProvenance = new List<Provenance>();
             try
             {
-                using (var maConnexion = GetConnection())
+                using (var myConnection = GetConnection())
                 {
-                    using (var maCommande = new SqlCommand("ListerProvenance", maConnexion))
+
+                    using (var myCommand = CreateCommand("ListerProvenance", null))
                     {
-                        // spécifier le commandtype
-                        maCommande.CommandType = CommandType.StoredProcedure;
-                        // donner les parametres
-                        //maCommande.Parameters.Add(new SqlParameter("@provenance", ));
-                        // ouvrir la connexion avec la commande
-                        maCommande.Connection.Open();
                         // executer ma commande
                         // récupérer le résultat
-                        using (var monDataReader = maCommande.ExecuteReader())
+                        using (var monDataReader = myCommand.ExecuteReader())
                         {
                             while (monDataReader.Read()) 
                             {
