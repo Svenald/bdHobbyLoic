@@ -21,5 +21,11 @@ namespace wfa_hobby
             modifierDetruireEtudiantForm maForme = new modifierDetruireEtudiantForm();
             maForme.ShowDialog();
         }
+
+        private void hobbyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LierHobbyEtudiant maForme = new LierHobbyEtudiant();
+            maForme.ShowDialog();
+        }
     }
 }
