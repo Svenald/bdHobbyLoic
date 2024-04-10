@@ -12,7 +12,7 @@ namespace wfa_hobby
         private string prenom;
         private string nom;
         private string cellulaire;
-        private int humour;
+        private int? humour;
         private int no_provenance;
         private string nomComplet;
 
@@ -21,7 +21,7 @@ namespace wfa_hobby
         public string Prenom { get => prenom; set => prenom = value; }
         public string Nom { get => nom; set => nom = value; }
         public string Cellulaire { get => cellulaire; set => cellulaire = value; }
-        public int Humour { get => humour; set => humour = value; }
+        public int? Humour { get => humour; set => humour = value; }
         public int No_provenance { get => no_provenance; set => no_provenance = value; }
         public string NomComplet { get { return $"{Nom}, {Prenom}, {Cellulaire}"; } }
     }

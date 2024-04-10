@@ -27,11 +27,46 @@ namespace wfa_hobby
 
                 MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            ManagerEtudiant managerEtudiant = new ManagerEtudiant();
+            try
+            {
+                comboBox_Etudiant.DataSource = managerEtudiant.AfficherEtudiant();
+                comboBox_Etudiant.DisplayMember = "NomComplet";
+                comboBox_Etudiant.ValueMember = "nom";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Associer_Click(object sender, EventArgs e)
         {
+            Etudiant etudiant = comboBox_Etudiant.SelectedItem as Etudiant;
+            Hobby hobby = comboBox_Hobby.SelectedItem as Hobby;
 
+            if (etudiant == null || hobby == null) 
+            {
+                MessageBox.Show("Veuillez choisir un étudiant ou un hobby");
+                return;
+            }
+            try
+            {
+                ManagerLierEtudiantHobby managerLierEtudiantHobby = new ManagerLierEtudiantHobby();
+                int nombreLignesAffectees = 0;
+                nombreLignesAffectees = managerLierEtudiantHobby.LierHobbyAvecEtudiant(etudiant, hobby);
+                    if (nombreLignesAffectees > 0)
+                    {
+                        MessageBox.Show("Ajout réussi");
+                    }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

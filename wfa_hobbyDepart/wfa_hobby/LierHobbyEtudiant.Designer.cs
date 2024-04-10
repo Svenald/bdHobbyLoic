@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             comboBox_Hobby = new ComboBox();
-            comboBox2 = new ComboBox();
+            comboBox_Etudiant = new ComboBox();
             label_Etudiant = new Label();
             label2 = new Label();
             button1 = new Button();
@@ -43,13 +43,13 @@
             comboBox_Hobby.Size = new Size(235, 23);
             comboBox_Hobby.TabIndex = 0;
             // 
-            // comboBox2
+            // comboBox_Etudiant
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(71, 6);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(235, 23);
-            comboBox2.TabIndex = 1;
+            comboBox_Etudiant.FormattingEnabled = true;
+            comboBox_Etudiant.Location = new Point(71, 6);
+            comboBox_Etudiant.Name = "comboBox_Etudiant";
+            comboBox_Etudiant.Size = new Size(235, 23);
+            comboBox_Etudiant.TabIndex = 1;
             // 
             // label_Etudiant
             // 
@@ -75,9 +75,9 @@
             button1.Name = "button1";
             button1.Size = new Size(235, 23);
             button1.TabIndex = 4;
-            button1.Text = "button1";
+            button1.Text = "Associer";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += Associer_Click;
             // 
             // LierHobbyEtudiant
             // 
@@ -87,7 +87,7 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label_Etudiant);
-            Controls.Add(comboBox2);
+            Controls.Add(comboBox_Etudiant);
             Controls.Add(comboBox_Hobby);
             Name = "LierHobbyEtudiant";
             Text = "LierHobbyEtudiant";
@@ -98,7 +98,7 @@
         #endregion
 
         private ComboBox comboBox_Hobby;
-        private ComboBox comboBox2;
+        private ComboBox comboBox_Etudiant;
         private Label label_Etudiant;
         private Label label2;
         private Button button1;

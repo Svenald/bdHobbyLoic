@@ -50,5 +50,52 @@ namespace wfa_hobby
             return nombreDeLignesAffectees;
         }
 
+        public List<Etudiant> AfficherEtudiant()
+        {
+            List<Etudiant> maListeDEtudiant = new List<Etudiant>();
+            try
+            {
+                using (var myConnection = GetConnection())
+                {
+                    using (var myCommand = CreateCommand("AfficherEtudiant", null))
+                    {
+                        // executer ma commande
+                        // récupérer le résultat
+                        using (var monDataReader = myCommand.ExecuteReader())
+                        {
+                            while (monDataReader.Read())
+                            {
+                                //private int no_etudiant;
+                                //private string prenom;
+                                //private string nom;
+                                //private string cellulaire;
+                                //private int humour;
+                                //private int no_provenance;
+                                //private string nomComplet;
+
+                                var monEtudiant = new Etudiant();
+
+                                monEtudiant.No_etudiant = (int)monDataReader["no_etudiant"];
+                                monEtudiant.Prenom = (string)monDataReader["prenom"]/*.ToString()*/;
+                                monEtudiant.Nom = (string)monDataReader["nom"]/*.ToString()*/;
+                                monEtudiant.Cellulaire = Convert.ToString(monDataReader["cellulaire"]);/*(string)monDataReader["cellulaire"];*/
+                                //if (monDataReader["humour"] is not null)
+                                //{
+                                //    monEtudiant.Humour = (int)monDataReader["humour"];
+                                //}
+                                monEtudiant.No_provenance = (int)monDataReader["no_provenance"];
+                                maListeDEtudiant.Add(monEtudiant);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return maListeDEtudiant;
+        }
+
     }
 }
