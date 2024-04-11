@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace wfa_hobby
 {
-    internal class ManagerLierEtudiantHobby : Manager
+    internal class ManagerEtudiantHobby : Manager
     {
         private List<SqlParameter> DefindParametersAdd(Etudiant etudiant, Hobby hobby)
         {
@@ -24,7 +25,7 @@ namespace wfa_hobby
             {
                 using (var myConnection = GetConnection()) //Creation d'une variable pour stocker la connexion
                 {
-                    using (var myCommand = CreateCommand("AssocierUnHobbyAUnEtudiant", myList)) //utilisation de la variable de connexion
+                    using (var myCommand = CreerCommande("AssocierUnHobbyAUnEtudiant", myList)) //utilisation de la variable de connexion
                     {
                         nombreDeLignesAffectees = myCommand.ExecuteNonQuery();
                     }
@@ -45,6 +46,29 @@ namespace wfa_hobby
                 throw;
             }
             return nombreDeLignesAffectees;
+        }
+
+        public int CompterNombreHobby(int no_etudiant)
+        {
+            List<SqlParameter> mesParametres = new List<SqlParameter>();
+            mesParametres.Add(new SqlParameter("@no_etudiant", (no_etudiant == 0 ? DBNull.Value : no_etudiant)));
+            int compterNombreHobby = 0;
+            try
+            {
+                using (var maConnexion = GetConnection())
+                {
+                    using (var maCommande = CreerCommande("CompterNombreDeHobby", mesParametres))
+                    {
+                        compterNombreHobby = (int)maCommande.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return compterNombreHobby;
         }
     }
 }

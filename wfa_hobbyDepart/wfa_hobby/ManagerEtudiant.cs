@@ -57,7 +57,7 @@ namespace wfa_hobby
             {
                 using (var myConnection = GetConnection())
                 {
-                    using (var myCommand = CreateCommand("AfficherEtudiant", null))
+                    using (var myCommand = CreerCommande("AfficherEtudiant", null))
                     {
                         // executer ma commande
                         // récupérer le résultat

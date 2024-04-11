@@ -27,5 +27,11 @@ namespace wfa_hobby
             LierHobbyEtudiant maForme = new LierHobbyEtudiant();
             maForme.ShowDialog();
         }
+
+        private void nombreDeHobbyDun…tudiantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ScalaireForm scalaireForm = new ScalaireForm();
+            scalaireForm.ShowDialog();
+        }
     }
 }

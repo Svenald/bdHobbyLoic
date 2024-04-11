@@ -16,7 +16,7 @@ namespace wfa_hobby
             {
                 using (var myConnection = GetConnection())
                 {
-                    using (var myCommand = CreateCommand("ListerProvenance", null))
+                    using (var myCommand = CreerCommande("ListerProvenance", null))
                     {
                         // executer ma commande
                         // récupérer le résultat

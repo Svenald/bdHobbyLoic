@@ -54,7 +54,7 @@ namespace wfa_hobby
             }
             try
             {
-                ManagerLierEtudiantHobby managerLierEtudiantHobby = new ManagerLierEtudiantHobby();
+                ManagerEtudiantHobby managerLierEtudiantHobby = new ManagerEtudiantHobby();
                 int nombreLignesAffectees = 0;
                 nombreLignesAffectees = managerLierEtudiantHobby.LierHobbyAvecEtudiant(etudiant, hobby);
                     if (nombreLignesAffectees > 0)

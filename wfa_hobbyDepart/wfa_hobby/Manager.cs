@@ -16,7 +16,7 @@ namespace wfa_hobby
             var myConnection = new SqlConnection(Properties.Settings.Default.maconnexionString);
             return myConnection;
         }
-        protected SqlCommand CreateCommand(string nomProcedureStockee, List<SqlParameter> MySqlParameters)
+        protected SqlCommand CreerCommande(string nomProcedureStockee, List<SqlParameter> MySqlParameters)
         {
             SqlCommand myCommand = new SqlCommand(nomProcedureStockee, GetConnection());
             //Defind commandType
