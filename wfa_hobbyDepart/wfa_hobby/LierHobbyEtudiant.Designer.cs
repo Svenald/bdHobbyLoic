@@ -33,6 +33,8 @@
             label_Etudiant = new Label();
             label2 = new Label();
             button1 = new Button();
+            dataGridView_Hobby = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Hobby).BeginInit();
             SuspendLayout();
             // 
             // comboBox_Hobby
@@ -50,6 +52,7 @@
             comboBox_Etudiant.Name = "comboBox_Etudiant";
             comboBox_Etudiant.Size = new Size(235, 23);
             comboBox_Etudiant.TabIndex = 1;
+            comboBox_Etudiant.SelectionChangeCommitted += comboBox_Etudiant_SelectionChangeCommitted;
             // 
             // label_Etudiant
             // 
@@ -79,11 +82,20 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += Associer_Click;
             // 
+            // dataGridView_Hobby
+            // 
+            dataGridView_Hobby.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_Hobby.Location = new Point(71, 125);
+            dataGridView_Hobby.Name = "dataGridView_Hobby";
+            dataGridView_Hobby.Size = new Size(235, 290);
+            dataGridView_Hobby.TabIndex = 5;
+            // 
             // LierHobbyEtudiant
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(813, 472);
+            Controls.Add(dataGridView_Hobby);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label_Etudiant);
@@ -91,6 +103,7 @@
             Controls.Add(comboBox_Hobby);
             Name = "LierHobbyEtudiant";
             Text = "LierHobbyEtudiant";
+            ((System.ComponentModel.ISupportInitialize)dataGridView_Hobby).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -102,5 +115,6 @@
         private Label label_Etudiant;
         private Label label2;
         private Button button1;
+        private DataGridView dataGridView_Hobby;
     }
 }

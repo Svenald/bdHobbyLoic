@@ -70,5 +70,36 @@ namespace wfa_hobby
             }
             return compterNombreHobby;
         }
+
+        public List<Hobby> ListerLesHobbyDeLEtudiant(int no_etudiant)
+        {
+            List<Hobby> maListeDeHobby = new List<Hobby>();
+            List<SqlParameter> mesParametres = new List<SqlParameter>();
+            mesParametres.Add(new SqlParameter("@no_etudiant", (no_etudiant == 0 ? DBNull.Value : no_etudiant)));
+            try
+            {
+                using (var maConnexion = GetConnection())
+                {
+                    using (var maCommande = CreerCommande("ListerHobbyDeLEtudiant", mesParametres))
+                    {
+                        using (var monDataReader = maCommande.ExecuteReader())
+                        {
+                            while (monDataReader.Read())
+                            {
+                                var monHobby = new Hobby();
+                                monHobby.No_hobby = (int)monDataReader["no_hobby"];
+                                monHobby.NomHobby = Convert.ToString(monDataReader["hobby"])/*.ToString()*/;
+                                maListeDeHobby.Add(monHobby);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return maListeDeHobby;
+        }
     }
 }
