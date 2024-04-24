@@ -33,5 +33,11 @@ namespace wfa_hobby
             ScalaireForm scalaireForm = new ScalaireForm();
             scalaireForm.ShowDialog();
         }
+
+        private void regularExpressionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegExForm regExForm = new RegExForm();
+            regExForm.ShowDialog();
+        }
     }
 }

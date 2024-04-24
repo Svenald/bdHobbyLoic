@@ -34,6 +34,7 @@
             modifierToolStripMenuItem = new ToolStripMenuItem();
             hobbyToolStripMenuItem = new ToolStripMenuItem();
             nombreDeHobbyDunÉtudiantToolStripMenuItem = new ToolStripMenuItem();
+            regularExpressionToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,7 +42,7 @@
             // 
             menuStrip1.Font = new Font("Segoe UI", 12F);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { étudiantToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { étudiantToolStripMenuItem, regularExpressionToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(8, 3, 0, 3);
@@ -84,6 +85,13 @@
             nombreDeHobbyDunÉtudiantToolStripMenuItem.Text = "Nombre de Hobby d'un étudiant";
             nombreDeHobbyDunÉtudiantToolStripMenuItem.Click += nombreDeHobbyDunÉtudiantToolStripMenuItem_Click;
             // 
+            // regularExpressionToolStripMenuItem
+            // 
+            regularExpressionToolStripMenuItem.Name = "regularExpressionToolStripMenuItem";
+            regularExpressionToolStripMenuItem.Size = new Size(154, 25);
+            regularExpressionToolStripMenuItem.Text = "Regular Expression";
+            regularExpressionToolStripMenuItem.Click += regularExpressionToolStripMenuItem_Click;
+            // 
             // menuForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -110,5 +118,6 @@
         private ToolStripMenuItem modifierToolStripMenuItem;
         private ToolStripMenuItem hobbyToolStripMenuItem;
         private ToolStripMenuItem nombreDeHobbyDunÉtudiantToolStripMenuItem;
+        private ToolStripMenuItem regularExpressionToolStripMenuItem;
     }
 }
